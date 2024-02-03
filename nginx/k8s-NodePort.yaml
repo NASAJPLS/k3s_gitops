@@ -1,15 +1,15 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: cluster-ip-svc
-  namespace: default
-spec:
-  selector:
-    app: nginx
-  type: NodePort # 每台机器都会为这个 service 随机分配一个指定的端口
-  ports:
-  - name: nginx
-    protocol: TCP
-    port: 80 # service 的端口，访问到 service 的 80 端口
-    targetPort: 80 # Pod 的端口，派发到 Pod 的 80 端口
-    nodePort: 31111 # 不指定，默认会在 30000 ~ 32767 范围内随机分配，集群中的所有机器都会打开这个端口，访问 K8s 集群中的任意一条机器都可以访问 Service 代理的 Pod 。
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: cluster-ip-svc
+#   namespace: default
+# spec:
+#   selector:
+#     app: nginx
+#   type: NodePort # 每台机器都会为这个 service 随机分配一个指定的端口
+#   ports:
+#   - name: nginx
+#     protocol: TCP
+#     port: 80 # service 的端口，访问到 service 的 80 端口
+#     targetPort: 80 # Pod 的端口，派发到 Pod 的 80 端口
+#     nodePort: 31111 # 不指定，默认会在 30000 ~ 32767 范围内随机分配，集群中的所有机器都会打开这个端口，访问 K8s 集群中的任意一条机器都可以访问 Service 代理的 Pod 。
