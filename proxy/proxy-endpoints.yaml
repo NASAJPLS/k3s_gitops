@@ -5,6 +5,6 @@ metadata:
   namespace: default
 subsets:
   - addresses:
-    - ip: 192.168.186.1:7890 #外部数据库地址
+    - ip: 192.168.186.1 #外部数据库地址
     ports:
     - port: 7890
