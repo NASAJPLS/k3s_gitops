@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  crmui-deploy
+  namespace: default
+  labels:
+    app:  crmui
+spec:
+  selector:
+    matchLabels:
+      app: crmui
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: crmui
+    spec:
+      containers:
+      - name:  crmui
+        image: crmui_deploy:v23
+        ports:
+        - containerPort:  80
+          name:  crmui-port
+        env:
+        - name: "branch"
+          value: "dev"
+      restartPolicy: Always
