@@ -20,7 +20,7 @@ spec:
         image: gx_deploy:v15
         ports:
         - containerPort:  8080
-          name:  gx_port
+          name:  gx-port
           env:
           - name: "branch"
             value: "dev"
