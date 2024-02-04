@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  nginx-deploy
+  namespace: default
+  labels:
+    app:  nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name:  gx
+        image: gx_deploy:v15
+        ports:
+        - containerPort:  8080
+          name:  gx_port
+          env:
+          - name: "branch"
+            value: "dev"
+      restartPolicy: Always
