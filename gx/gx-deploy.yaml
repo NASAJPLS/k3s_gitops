@@ -21,7 +21,7 @@ spec:
         ports:
         - containerPort:  8080
           name:  gx-port
-          env:
-          - name: "branch"
-            value: "dev"
+        env:
+        - name: "branch"
+          value: "dev"
       restartPolicy: Always
