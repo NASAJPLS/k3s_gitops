@@ -4,7 +4,7 @@ metadata:
   name: proxy-service
   namespace: default
 spec:
-  clusterIP: 10.96.2.128 #固定clusterIP
+  clusterIP: 10.43.0.128 #固定clusterIP
   ports:
   - port: 7890
     targetPort: 7890
