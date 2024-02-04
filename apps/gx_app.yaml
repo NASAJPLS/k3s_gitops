@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp
-  namespace: dev
+  name: gx_app
+  namespace: default
 spec:
   destination:
-    namespace: dev # 部署应用的命名空间
+    namespace: default # 部署应用的命名空间
     server: https://kubernetes.default.svc # API Server 地址
   project: default # 项目名
   source:
