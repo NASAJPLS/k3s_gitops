@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sport01-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: default # 部署应用的命名空间
+    server: https://kubernetes.default.svc # API Server 地址
+  project: default # 项目名
+  source:
+    path: sport01 # 资源文件路径
+    repoURL: https://github.com/NASAJPLS/k3s_gitops.git # Git 仓库地址
+    targetRevision: main # 分支名
