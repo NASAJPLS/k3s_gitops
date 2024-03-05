@@ -29,7 +29,7 @@ spec:
         image: crmui_deploy:v24
         ports:
         - containerPort:  80
-          name:  sport01-crmui-port
+          name:  sport01-ui-port
         env:
         - name: "branch"
           value: "dev"
