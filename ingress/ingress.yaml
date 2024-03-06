@@ -4,7 +4,9 @@ metadata:
   name: ingress-http
   namespace: default
   annotations:
-    "traefik.http.routers.router1.middlewares": "default-ratelimit@kubernetescrd"
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.http.routers.router1.middlewares: "default-ratelimit@kubernetescrd"
 spec:
   ingressClassName: traefik
   rules:
