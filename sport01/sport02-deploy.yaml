@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  sport02-deploy
+  namespace: default
+  labels:
+    app:  sport02
+spec:
+  selector:
+    matchLabels:
+      app: sport02
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sport02
+    spec:
+      containers:
+      - name:  gx
+        image: gx_deploy:v15
+        ports:
+        - containerPort:  8080
+          name:  sport02-gx-port
+        env:
+        - name: "branch"
+          value: "dev"
+
+      - name:  crmui
+        image: crmui_deploy:v24
+        ports:
+        - containerPort:  80
+          name:  sport02-ui-port
+        env:
+        - name: "branch"
+          value: "dev"
+      restartPolicy: Always
