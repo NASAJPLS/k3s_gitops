@@ -10,6 +10,16 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
+  - host: argocd.tianma-trial.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: argocd-server
+            port:
+              number: 80
   - host: sport01.tianma-trial.com
     http:
       paths:
