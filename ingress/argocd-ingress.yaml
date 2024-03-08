@@ -9,6 +9,10 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: "default-ratelimit@kubernetescrd"
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - argocd.tianma-trial.com
+      secretName: argocd-tls-secret
   rules:
   - host: argocd.tianma-trial.com
     http:
